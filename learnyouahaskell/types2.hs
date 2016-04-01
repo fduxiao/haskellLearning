@@ -16,3 +16,8 @@ vectMult :: (Num t) => Vector t -> t -> Vector t
 
 scalarMult :: (Num t) => Vector t -> Vector t -> t
 (Vector i j k) `scalarMult` (Vector l m n) = i*l + j*m + k*n
+
+type Row = [Int]
+
+sum' :: Row -> Int
+sum' = sum
