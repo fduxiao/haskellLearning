@@ -39,19 +39,6 @@ encodeIndentJValue (JArray a) = "[\n" ++ (intercalate ",\n" $ addIndent [eij x |
   where
     addIndent = fmap $ intercalate "\n" . fmap ("  " ++) . lines
     eij = encodeIndentJValue
--- encodeIndentJValue  o = encodeIndentJValue' o 0
---   where
---     ntab n = take n $ repeat '\t'
---     mapTuple (s, v) = "\"" ++ s ++ "\": " ++ encodeIndentJValue' v (n+1)
---     encodeIndentJValue' (JString s) n = (ntab n) ++ "\"" ++ s ++ "\""
---     encodeIndentJValue' (JInteger i) n = (ntab n) ++ (show i)
---     encodeIndentJValue' (JFloat f) n = (ntab n) ++ (show f)
---     encodeIndentJValue' (JBool b) n = (ntab n) ++ if b then "true" else "false"
---     encodeIndentJValue' (JNull) n = (ntab n) ++ "null"
---     encodeIndentJValue' (JObject o) n = (ntab n) ++ "{\n"
---       ++ (intercalate ", \n" (fmap mapTuple o)) ++
---
-
 
 -- following is two parsers
 data Error = EmptyError | ItemError Bool | SatError Char | CharError Char | StringError String |
