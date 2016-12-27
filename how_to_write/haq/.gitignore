@@ -1,0 +1,6 @@
+# built objects
+/dist
+# built binary
+/.cabal-sandbox
+# since it is generated automatically
+/cabal.sandbox.config
