@@ -1,0 +1,4 @@
+# built binaries
+/dist
+# stack installed libs
+.stack*
